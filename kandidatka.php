@@ -17,25 +17,26 @@
  */
 
 /**
- * Registers a new admin menu right after the Posts item.
+ * Registers the new post type "sz_kandidatka".
  *
- * @see add_menu_page
+ * @see register_post_type
  */
-function kandidatka_menu() {
-	add_menu_page(
-		'Nastavení kandidátky',
-		'Kandidátka',
-		'manage_options',
-		'kandidatka',
-		'kandidatka_page',
-		null,
-		6
-	);
+function sz_kandidatka_init() {
+	register_post_type( 'sz_kandidatka', array(
+		'labels' => array(
+			'name' => 'Kandidátky',
+			'singular_name' => 'Kandidátka',
+			'name_admin_bar' => 'Vytvořit kandidátku',
+			'all_items' => 'Přehled kandidátek',
+			'add_new' => 'Vytvořit kandidátku',
+			'add_new_item' => 'Vytvořit novou kandidátku',
+			'edit_item' => 'Upravit kandidátku',
+			'new_item' => 'Vytvořit kandidátku'
+		),
+		'public' => true,
+		'supports' => array(
+			'title', 'editor', 'custom-fields'
+		)
+	));
 }
-add_action( 'admin_menu', 'kandidatka_menu' );
-
-/**
- * Outputs the main editation page.
- */
-function kandidatka_page() {
-}
+add_action( 'init', 'sz_kandidatka_init' );
