@@ -22,15 +22,15 @@
  * @see add_menu_page
  */
 function kandidatka_menu() {
-    add_menu_page(
-        'Nastavení kandidátky',
-        'Kandidátka',
-        'manage_options',
-        'kandidatka',
-        'kandidatka_page',
-        null,
-        6
-    );
+	add_menu_page(
+		'Nastavení kandidátky',
+		'Kandidátka',
+		'manage_options',
+		'kandidatka',
+		'kandidatka_page',
+		null,
+		6
+	);
 }
 add_action( 'admin_menu', 'kandidatka_menu' );
 
