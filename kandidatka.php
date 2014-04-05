@@ -71,7 +71,10 @@ function sz_kandidatka_save_template( $post_id, $post ) {
 add_action( 'save_post', 'sz_kandidatka_save_template', 10, 2 );
 
 /**
- * Loads 
+ * Loads a template from "kandidatka" custom template.
+ *
+ * @param string $template
+ * @return string
  */
 function sz_kandidatka_get_template_for_template_loader( $template ) {
 	global $wp_query;
