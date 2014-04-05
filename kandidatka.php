@@ -95,3 +95,14 @@ function sz_kandidatka_get_template_for_template_loader( $template ) {
 add_filter(
 	'template_include', 'sz_kandidatka_get_template_for_template_loader', 99
 );
+
+/**
+ * Renders custom CSS for custom fields edits.
+ */
+function sz_kandidatka_admin_head() {
+	?>
+<style>
+</style>
+	<?php
+}
+//add_action( 'acf/input/admin_head', 'sz_kandidatka_admin_head' );
